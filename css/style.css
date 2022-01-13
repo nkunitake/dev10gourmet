@@ -1,0 +1,311 @@
+.search-box_label {
+  font-weight: bold;
+}
+
+.is-hide {
+  display: none;
+}
+
+.output li {
+      background: #ccc;
+    }
+
+
+/* トップコンテナ */
+
+h1 {
+    font-size: 36px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+h1:before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  display: inline-block;
+  width: 60px;
+  height: 5px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: black;
+  border-radius: 2px;
+}
+
+.top-wrapper{
+  margin: 0 auto;
+  height: 300px;
+  background-image: url(../img/kv3.jpg);
+  background-position: center;
+  background-size: cover;
+  	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.top-description{
+    margin: 5px 0 5px;
+    font-size:16px;
+    font-weight: bold;
+}
+
+/* ボタン */
+/* button {
+ border: none;
+ display: block;
+ position: relative;
+ padding: 0.7em 2.4em;
+ font-size: 18px;
+ background: #fff;
+ cursor: pointer;
+ user-select: none;
+ overflow: hidden;
+ color: royalblue;
+ z-index: 1;
+ font-family: inherit;
+ font-weight: 500;
+ margin: auto;
+}
+
+button span {
+ position: absolute;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 100%;
+ background: transparent;
+ z-index: -1;
+ border: 4px solid royalblue;
+}
+
+button span::before {
+ content: "";
+ display: block;
+ position: absolute;
+ width: 8%;
+ height: 500%;
+ background: var(--lightgray);
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%) rotate(-60deg);
+ transition: all 0.3s;
+}
+
+button:hover span::before {
+ transform: translate(-50%, -50%) rotate(-90deg);
+ width: 100%;
+ background: royalblue;
+}
+
+button:hover {
+ color: white;
+}
+
+button:active span::before {
+ background: #2751cd;
+} */
+
+
+
+.btn {
+    margin:30px 0 0;
+  padding: 20px 24px;
+  color: white;
+  display: inline-block;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: o auto;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.message {
+  padding: 15px 120px;
+  background-color: #f3980a;
+  cursor: pointer;
+  box-shadow: 0px 7px #884400;
+}
+
+/* お店登録フォーム */
+.shop-modal-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.modal {
+  position: absolute;
+  top: 5%;
+  left: 25%;
+  background-color: #e6ecf0;
+  padding: 20px 50px 40px 0px;
+  border-radius: 10px;
+  width: 750px;
+  height: 600px;
+  text-align: center;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgba(128, 128, 128, 0.46);
+  cursor: pointer;
+}
+
+.form-wrapper{
+    padding:0 50px;
+}
+
+h2 {
+  padding-top: 15px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+h2::before, h2::after{
+  content: "";
+    background-color: #616161;
+  display:inline-block;
+  width: 40px;
+  height: 1px;
+  margin: 0 20px;
+  vertical-align: middle;
+}
+
+.form-inner{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10px;
+}
+
+.inner-title{
+    width: 150px;
+    text-align: right;
+    margin: 10px 10px 10px 0;
+}
+
+.inner-detail{
+    width: 400px;
+    text-align: left;
+    margin: 10px 0 10px 10px;
+}
+
+.form-parts{
+    width: 100%;
+    background-color: #fff;
+}
+
+.textarea-parts{
+    width: 100%;
+    background-color: #fff;
+}
+
+.select-parts{
+    width: 100%;
+        background-color: #fff;
+}
+
+.btn-submit {
+  font-family: 'Dosis', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background: #f3980a;
+  border: 1px solid #f3980a;
+  border-radius: 3px;
+  color: white;
+  margin: 20px;
+  padding: 10px 26px;
+  cursor: pointer;
+}
+
+
+/* ラジオボタン */
+.search-wrapper{
+    margin: 10px 80px 10px;
+}
+
+/* .narrow-open {
+  font-size: 12px;
+  padding: 5px 0px;
+  margin-bottom: 15px;
+  display: none;
+} */
+
+
+
+/* ラジオボタン枠線 */
+.box20 {
+    position: relative;
+    padding: 10px 30px;
+    top: 0;
+    background: #efefef;
+}
+.box20:before, .box20:after{ 
+    position: absolute;
+    top: 0;
+    content:'';
+    width: 10px;
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.box20:before{
+    border-left: dotted 2px #15adc1;
+    border-top: dotted 2px #15adc1;
+    border-bottom: dotted 2px #15adc1;
+    left: 0;
+}
+.box20:after{
+    border-top: dotted 2px #15adc1;
+    border-right: dotted 2px #15adc1;
+    border-bottom: dotted 2px #15adc1;
+    right: 0;
+}
+.box20 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.search-box{
+    font-size: 12px;
+    margin: 5px;
+}
+
+.radio-detail{
+    margin:0 5px;
+}
+
+
+/* 出力場所 */
+
+.output-wrapper{
+    margin: 10px 200px 10px;
+}
+
+.list_item{
+    border: solid 3px #e0dccc;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 10px 20px;
+}
+
+.list_detail{
+    position: relative;
+    padding: 10px 30px;
+}
+
+.list_info{
+    margin: 3px 0 4px;
+    color: #949499;
+    font-size: 15px;
+}

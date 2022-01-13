@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dev10 Gourmet</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/sanitize.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- トップコンテナ -->
+    <div class="top-wrapper">
+        <div class="title-wrapper">
+            <h1 class="top-title">DEV10 Gourmet</h1>
+            <p class="top-description">福岡の美味しいお店をメンバー間で共有する「DEV10 Gourmet」。<br>
+                飲み会から記念日、シメに最適なお店まで、幅広く網羅しましょう！
+            </p>
+            <div class="btn message modal-open">お店を登録する
+            </div>
+            <!-- <button>
+                <span></span>
+                <div class="modal-open">
+                    お店を登録する
+                </div>
+            </button> -->
+        </div>
+    </div>
+    <!-- お店登録フォーム -->
+    <div class="shop-modal-wrapper" id="shop-modal">
+        <div class="modal">
+            <div class="modal-close">
+                <div class="fa fa-2x fa-times"></div>
+            </div>
+            <form class="form-wrapper">
+                <div class="modal-title">
+                    <h2>お店情報登録フォーム</h2>
+                </div>
+                <dl class="form-inner">
+                    <dt class="inner-title">記入者:</dt>
+                    <dd class="inner-detail"><input type="text" id="name" class="form-parts"></dd>
+                    <dt class="inner-title">店名:</dt>
+                    <dd class="inner-detail"><input type="text" id="shop" class="form-parts"></dd>
+                    <dt class="inner-title">店舗URL:</dt>
+                    <dd class="inner-detail"><input type="text" id="shopurl" class="form-parts"></dd>
+                    <dt class="inner-title">エリア:</dt>
+                    <dd class="inner-detail"><select id="zone" class="select-parts">
+                            <option value="">選択してください</option>
+                            <option value="天神・大名">天神・大名</option>
+                            <option value="赤坂・警固">赤坂・警固</option>
+                            <option value="薬院・平尾">薬院・平尾</option>
+                            <option value="中洲">中洲</option>
+                            <option value="西中洲・春吉">西中洲・春吉</option>
+                            <option value="博多・住吉">博多・住吉</option>
+                            <option value="大濠・大手門・長浜">大濠・大手門・長浜</option>
+                        </select>
+                    </dd>
+                    <dt class="inner-title">シーン:</dt>
+                    <dd class="inner-detail"><select id="scene" class="select-parts">
+                            <option value="">選択してください</option>
+                            <option value="飲み会">飲み会</option>
+                            <option value="会食・接待">会食・接待</option>
+                            <option value="記念日・デート">記念日・デート</option>
+                            <option value="2軒目">2軒目</option>
+                            <option value="シメ">シメ</option>
+                            <option value="ランチ・定食">ランチ・定食</option>
+                            <option value="カフェ">カフェ</option>
+                        </select>
+                    </dd>
+                    <dt class="inner-title">ジャンル:</dt>
+                    <dd class="inner-detail"><select id="genre" class="select-parts">
+                            <option value="">選択してください</option>
+                            <option value="魚料理・寿司">魚料理・寿司</option>
+                            <option value="肉料理・焼肉">肉料理・焼肉</option>
+                            <option value="イタリアン・フレンチ">イタリアン・フレンチ</option>
+                            <option value="居酒屋・和食全般">居酒屋・和食全般</option>
+                            <option value="バー・バル">バー・バル</option>
+                            <option value="中華・エスニック">中華・エスニック</option>
+                            <option value="アジア・エスニック料理">アジア・エスニック料理</option>
+                            <option value="ラーメン・うどん・麺類">ラーメン・うどん・麺類</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </dd>
+                    <dt class="inner-title">予算:</dt>
+                    <dd class="inner-detail"><select id="budget" class="select-parts">
+                            <option value="">選択してください</option>
+                            <option value="$$$">$$$（5千円以上）</option>
+                            <option value="$$">$$（2〜5千円）</option>
+                            <option value="$">$（2千円未満）</option>
+                        </select>
+                    </dd>
+                    <dt class="inner-title">おすすめポイント:</dt>
+                    <dd class="inner-detail"><textarea id="recommend" class="textarea-parts" wrap="soft"></textarea>
+                    </dd>
+                </dl>
+                <div>
+                    <button type="button" id="send" class="modal-close btn-submit">登録</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ラジオボタン -->
+    <div class="search-wrapper">
+        <div class="box20">
+            <div class="narrow-down">絞り込み条件
+                <div class="narrow-open">
+                    <div class="search-box">
+                        <span class="search-box_label">エリア :</span>
+                        <input type="radio" name="zone" value="" class="radio-detail">全て
+                        <input type="radio" name="zone" value="天神・大名" class="radio-detail">天神・大名
+                        <input type="radio" name="zone" value="赤坂・警固" class="radio-detail">赤坂・警固
+                        <input type="radio" name="zone" value="薬院・平尾" class="radio-detail">薬院・平尾
+                        <input type="radio" name="zone" value="中洲" class="radio-detail">中洲
+                        <input type="radio" name="zone" value="西中洲・春吉" class="radio-detail">西中洲・春吉
+                        <input type="radio" name="zone" value="博多・住吉" class="radio-detail">博多・住吉
+                        <input type="radio" name="zone" value="大濠・大手門・長浜" class="radio-detail">大濠・大手門・長浜
+                    </div>
+                    <div class="search-box">
+                        <span class="search-box_label">シーン :</span>
+                        <input type="radio" name="scene" value="" class="radio-detail">全て
+                        <input type="radio" name="scene" value="飲み会" class="radio-detail">飲み会
+                        <input type="radio" name="scene" value="会食・接待" class="radio-detail">会食・接待
+                        <input type="radio" name="scene" value="記念日・デート" class="radio-detail">記念日・デート
+                        <input type="radio" name="scene" value="2軒目" class="radio-detail">2軒目
+                        <input type="radio" name="scene" value="シメ" class="radio-detail">シメ
+                        <input type="radio" name="scene" value="ランチ・定食" class="radio-detail">ランチ・定食
+                        <input type="radio" name="scene" value="カフェ" class="radio-detail">カフェ
+                    </div>
+                    <div class="search-box">
+                        <span class="search-box_label">ジャンル :</span>
+                        <input type="radio" name="genre" value="" class="radio-detail">全て
+                        <input type="radio" name="genre" value="魚料理・寿司" class="radio-detail">魚料理・寿司
+                        <input type="radio" name="genre" value="肉料理・焼肉" class="radio-detail">肉料理・焼肉
+                        <input type="radio" name="genre" value="イタリアン・フレンチ" class="radio-detail">イタリアン・フレンチ
+                        <input type="radio" name="genre" value="居酒屋・和食全般" class="radio-detail">居酒屋・和食全般
+                        <input type="radio" name="genre" value="バー・バル" class="radio-detail">バー・バル
+                        <input type="radio" name="genre" value="中華・エスニック" class="radio-detail">中華・エスニック
+                        <input type="radio" name="genre" value="アジア・エスニック料理" class="radio-detail">アジア・エスニック料理
+                        <input type="radio" name="genre" value="ラーメン・うどん・麺類" class="radio-detail">ラーメン・うどん・麺類
+                        <input type="radio" name="genre" value="その他" class="radio-detail">その他
+                    </div>
+                    <div class="search-box">
+                        <span class="search-box_label">予算 :</span>
+                        <input type="radio" name="budget" value="" class="radio-detail">全て
+                        <input type="radio" name="budget" value="$$$" class="radio-detail">$$$
+                        <input type="radio" name="budget" value="$$" class="radio-detail">$$
+                        <input type="radio" name="budget" value="$" class="radio-detail">$
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 出力場所 -->
+    <div class="output-wrapper">
+        <div id="output" class="output-detail"></div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="modal.js"></script>
+    <script src="timestamp.js"></script>
+    <script type="module">
+        // 以下にfirebaseのコードを貼り付けよう
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        import {
+            getFirestore,
+            collection,
+            addDoc,
+            serverTimestamp,
+            query,
+            orderBy,
+            onSnapshot,
+        } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            authDomain: "lecture-realtime-chat-d41c4.firebaseapp.com",
+            projectId: "lecture-realtime-chat-d41c4",
+            storageBucket: "lecture-realtime-chat-d41c4.appspot.com",
+            messagingSenderId: "698683247505",
+            appId: "1:698683247505:web:48f4328abb3d7ea63ee830"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        $("#send").on("click", function () {
+            const data = {
+                name: $("#name").val(),
+                shop: $("#shop").val(),
+                shopurl: $("#shopurl").val(),
+                zone: $("#zone").val(),
+                scene: $("#scene").val(),
+                genre: $("#genre").val(),
+                budget: $("#budget").val(),
+                recommend: $("#recommend").val(),
+                time: serverTimestamp(),
+            };
+            addDoc(collection(db, "dev10gourmet"), data);
+            $("#shop").val("");
+            $("#shopurl").val("");
+            $("#zone").val("");
+            $("#scene").val("");
+            $("#genre").val("");
+            $("#budget").val("");
+            $("#recommend").val("");
+        })
+
+        const q = query(collection(db, "dev10gourmet"), orderBy("time", "desc"));
+        onSnapshot(q, (querySnapshot) => {
+            // console.log(querySnapshot.docs[0].id);
+            // console.log(querySnapshot.docs[0].data());
+            const dataArray = [];
+            querySnapshot.docs.forEach(function (doc) {
+                const data = {
+                    id: doc.id,
+                    data: doc.data(),
+                };
+                dataArray.push(data);
+            });
+
+            const tagArray = [];
+            dataArray.forEach(function (data) {
+                tagArray.push(`
+            <div id="${data.id}" class="list_item" data-zone="${data.data.zone}" data-scene="${data.data.scene}" data-genre="${data.data.genre}" data-budget="${data.data.budget}">
+            <div class="list_detail">
+            <p>記入者：${data.data.name}</p>
+            <p>店名：<a href="${data.data.shopurl}" target="_blank">${data.data.shop}</a></p>
+            <p>おすすめポイント： ${data.data.recommend}</p>
+            <p class="list_info">${data.data.zone} / ${data.data.scene} / ${data.data.genre}/ ${data.data.budget}</p>
+            </div>
+            </div>
+              `);
+                $("#output").html(tagArray);
+            })
+        });
+
+
+        var searchBox = '.search-box'; // 絞り込む項目を選択するエリア
+        var listItem = '.list_item';   // 絞り込み対象のアイテム
+        var hideClass = 'is-hide';     // 絞り込み対象外の場合に付与されるclass名
+
+        $(function () {
+            // 絞り込み項目を変更した時
+            $(document).on('change', searchBox + ' input', function () {
+                search_filter();
+            });
+        });
+
+        /**
+         * リストの絞り込みを行う
+         */
+        function search_filter() {
+            // 非表示状態を解除
+            $(listItem).removeClass(hideClass);
+            for (var i = 0; i < $(searchBox).length; i++) {
+                var username = $(searchBox).eq(i).find('input').attr('name');
+                // 選択されている項目を取得
+                var searchData = get_selected_input_items(username);
+                // 選択されている項目がない、またはALLを選択している場合は飛ばす
+                if (searchData.length === 0 || searchData[0] === '') {
+                    continue;
+                }
+                // リスト内の各アイテムをチェック
+                for (var j = 0; j < $(listItem).length; j++) {
+                    // アイテムに設定している項目を取得
+                    var itemData = $(listItem).eq(j).data(username);
+                    // 絞り込み対象かどうかを調べる
+                    if (searchData.indexOf(itemData) === -1) {
+                        $(listItem).eq(j).addClass(hideClass);
+                    }
+                }
+            }
+        }
+
+        /**
+         * inputで選択されている値の一覧を取得する
+         * @param  {String} name 対象にするinputのname属性の値
+         * @return {Array}       選択されているinputのvalue属性の値
+         */
+        function get_selected_input_items(username) {
+            var searchData = [];
+            $('[name=' + username + ']:checked').each(function () {
+                searchData.push($(this).val());
+            });
+            return searchData;
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
