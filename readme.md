@@ -20,4 +20,4 @@ DEV10 Gourmet
 - 複数のJSをつぎはぎで書いていったらコードがかなり汚くなった
 
 ## URL
-
+https://nkunitake.github.io/dev10gourmet/
